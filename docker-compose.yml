@@ -5,6 +5,7 @@ services:
     image: vpn:experimental-1
     volumes:
       - ./scripts/vpn:/usr/bin/vpn
+      - ./init.sh:/init.sh
       - ./logs:/var/log
       - ./keys:/data/key_files
       - /lib/modules:/lib/modules
@@ -14,6 +15,9 @@ services:
       - 40000:40000/tcp
       - 40001:40001/tcp
     privileged: true
+    network_mode: host
+    cap_add:
+      - NET_ADMIN
     dns:
       - 1.1.1.1
       - 1.0.0.1

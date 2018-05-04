@@ -34,7 +34,6 @@ RUN mkdir -p /data/key_files
 # Copy configure file to ipsec\iptables
 COPY ./conf/strongswan.conf /usr/local/etc/strongswan.conf
 COPY ./conf/ipsec.secrets /usr/local/etc/ipsec.secrets
-COPY ./conf/iptables /etc/sysconfig/iptables
 COPY ./conf/supervisord.conf /etc/supervisord.conf
 COPY ./conf/eap-radius.conf.template eap-radius.conf.template
 COPY ./conf/ipsec.conf.template ipsec.conf.template

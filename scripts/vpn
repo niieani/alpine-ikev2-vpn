@@ -18,11 +18,11 @@ ipsec pki --pub --in client.pem | ipsec pki --issue --cacert ca.cert.pem --cakey
 fi
 
 # Link certificate to ipsec dir
-\ln -sf /data/key_files/ca.cert.pem /usr/local/etc/ipsec.d/cacerts/
-\ln -sf /data/key_files/server.cert.pem /usr/local/etc/ipsec.d/certs/
-\ln -sf /data/key_files/server.pem /usr/local/etc/ipsec.d/private/
-\ln -sf /data/key_files/client.cert.pem /usr/local/etc/ipsec.d/certs/
-\ln -sf /data/key_files/client.pem  /usr/local/etc/ipsec.d/private/
+\ln -sf /data/key_files/ca.cert.pem /usr/local/etc/ipsec.d/cacerts/ca.cert.pem
+\ln -sf /data/key_files/server.cert.pem /usr/local/etc/ipsec.d/certs/server.cert.pem
+\ln -sf /data/key_files/server.pem /usr/local/etc/ipsec.d/private/server.pem
+\ln -sf /data/key_files/client.cert.pem /usr/local/etc/ipsec.d/certs/client.cert.pem
+\ln -sf /data/key_files/client.pem  /usr/local/etc/ipsec.d/private/client.pem
 
 # Enable system forward
 sysctl -w net.ipv4.ip_forward=1

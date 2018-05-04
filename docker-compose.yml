@@ -11,8 +11,8 @@ services:
     ports:
       - 500:500/udp
       - 4500:4500/udp
-      - 50000:50000/tcp
-      - 50001:50001/tcp
+      - 40000:40000/tcp
+      - 40001:40001/tcp
     privileged: true
     dns:
       - 1.1.1.1

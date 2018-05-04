@@ -1,18 +1,20 @@
-version: '3'
+version: '2.1'
 services:
   vpn:
-    image: ./
+    build: ./
+    image: vpn:experimental
     volumes:
       - ./logs:/var/log
+      - ./keys:/data/key_files
       - /lib/modules:/lib/modules
     ports:
       - 500:500/udp
       - 4500:4500/udp
+      - 50000:50000/tcp
+      - 50001:50001/tcp
     privileged: true
     dns:
-      - "1.1.1.1"
-      - "1.0.0.1"
-    environment:
-      - HOST_IP=${HOST_IP}
-      - VPNUSER=${VPNUSER}
-      - VPNPASS=${VPNPASS}
+      - 1.1.1.1
+      - 1.0.0.1
+    env_file:
+      - ./.env

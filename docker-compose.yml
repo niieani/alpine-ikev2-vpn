@@ -2,8 +2,9 @@ version: '2.1'
 services:
   vpn:
     build: ./
-    image: vpn:experimental
+    image: vpn:experimental-1
     volumes:
+      - ./scripts/vpn:/usr/bin/vpn
       - ./logs:/var/log
       - ./keys:/data/key_files
       - /lib/modules:/lib/modules
